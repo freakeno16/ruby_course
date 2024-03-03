@@ -10,6 +10,7 @@ class FreightTrain < Train
   private
 
   def validate!
-    raise "Wrong wagon type" if type != 'freight'
+    super
+    # raise "Wrong train type" if type != 'freight'
   end
 end

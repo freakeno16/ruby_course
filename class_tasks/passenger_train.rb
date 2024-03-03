@@ -4,12 +4,13 @@ class PassengerTrain < Train
   def initialize(name, number)
     super
     @type = 'passenger'
+    validate!
   end
 
   private 
 
   def validate!
     super
-    raise "Wrong wagon type" if type != 'passenger'
+    # raise "Wrong train type" if type != 'passenger'
   end
 end

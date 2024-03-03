@@ -65,7 +65,7 @@ def show_trains_on_station
   station_name = gets.chomp
 
   Station.all[station_name].show_trains do |t|
-    p "Train №#{train_str_num += 1}: number: #{t.number}, type: #{t.type}, wagons: #{t.wagons}"
+    p "Train №#{train_str_num += 1}: name: #{t.name}, number: #{t.number}, type: #{t.type}, wagons: #{t.wagons}"
   end
 end
 
@@ -105,11 +105,11 @@ def show_train_wagons
 
   if Train.all[train_name].type == 'passenger'
     Train.all[train_name].show_wagons do |w|
-      p "Wagon №#{wagon_str_num += 1}: name: #{w.name}, type: #{w.type}, places: #{w.places}"
+      p "Wagon №#{wagon_str_num += 1}: name: #{w.name}, number: #{w.number}, type: #{w.type}, places: #{w.places}"
     end
   elsif Train.all[train_name].type == 'freight'
     Train.all[train_name].show_wagons do |w|
-      p "Wagon №#{wagon_str_num += 1}: name: #{w.name}, type: #{w.type}, capacity: #{w.capacity}"
+      p "Wagon №#{wagon_str_num += 1}: name: #{w.name}, number: #{w.number}, type: #{w.type}, capacity: #{w.capacity}"
     end
   end
 end
